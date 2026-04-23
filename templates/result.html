@@ -1,0 +1,35 @@
+{% extends "base.html" %}
+{% block content %}
+
+<h2 class="mb-4 text-center"><i class="fas fa-clipboard-check me-2"></i> Résultat de l'analyse</h2>
+
+<div class="row justify-content-center">
+    <div class="col-md-6">
+        <div class="card p-4 text-center">
+
+            <div class="alert {% if result == 'Malignant' %}alert-danger{% else %}alert-success{% endif %} rounded-3 mb-4">
+                <i class="fas {% if result == 'Malignant' %}fa-exclamation-triangle{% else %}fa-check-circle{% endif %} fa-2x mb-2"></i>
+                <h4 class="fw-bold">{{ result }}</h4>
+                <p class="mb-0">Confiance : <b>{{ prob }}%</b></p>
+            </div>
+
+            <img src="/{{ img_path.replace('\\', '/') }}"
+                 class="result-image img-fluid rounded-3 mb-4"
+                 style="max-height:300px; object-fit:cover;">
+
+            <div class="d-flex gap-2 justify-content-center">
+                <a class="btn btn-primary" href="/dashboard">
+                    <i class="fas fa-home me-1"></i> Dashboard
+                </a>
+                <a class="btn btn-secondary" href="/predict">
+                    <i class="fas fa-search me-1"></i> Nouvelle analyse
+                </a>
+                <a class="btn btn-outline-primary" href="/patients">
+                    <i class="fas fa-users me-1"></i> Patients
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock %}

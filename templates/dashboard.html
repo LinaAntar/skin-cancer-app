@@ -1,0 +1,83 @@
+{% extends "base.html" %}
+{% block content %}
+
+<div class="d-flex justify-content-between align-items-center mb-4">
+    <h2><i class="fas fa-tachometer-alt me-2"></i> Dashboard</h2>
+    <a href="/predict" class="btn btn-primary">
+        <i class="fas fa-plus me-1"></i> Nouvelle analyse
+    </a>
+</div>
+
+<div class="row g-4 mb-4">
+   <div class="col-md-4">
+        <a href="/patients?filter=all" style="text-decoration:none;">
+            <div class="stat-card stat-card-blue">
+                <i class="fas fa-users fa-2x mb-3 opacity-75"></i>
+                <h6 class="text-uppercase fw-bold opacity-75" style="letter-spacing:1px;">Total Patients</h6>
+                <h1 class="fw-bold">{{ total }}</h1>
+                <small class="opacity-75">Voir tous →</small>
+            </div>
+        </a>
+    </div>
+   <div class="col-md-4">
+        <a href="/patients?filter=Malignant" style="text-decoration:none;">
+            <div class="stat-card stat-card-pink">
+                <i class="fas fa-exclamation-triangle fa-2x mb-3 opacity-75"></i>
+                <h6 class="text-uppercase fw-bold opacity-75" style="letter-spacing:1px;">Malignant</h6>
+                <h1 class="fw-bold">{{ malignant }}</h1>
+                <small class="opacity-75">Voir tous →</small>
+            </div>
+        </a>
+    </div>
+    <div class="col-md-4">
+        <a href="/patients?filter=Benign" style="text-decoration:none;">
+            <div class="stat-card stat-card-teal">
+                <i class="fas fa-check-circle fa-2x mb-3 opacity-75"></i>
+                <h6 class="text-uppercase fw-bold opacity-75" style="letter-spacing:1px;">Benign</h6>
+                <h1 class="fw-bold">{{ benign }}</h1>
+                <small class="opacity-75">Voir tous →</small>
+            </div>
+        </a>
+    </div>
+</div>
+
+<div class="row g-4">
+    <div class="col-md-6">
+        <div class="card p-4">
+            <h5 class="fw-bold mb-3"><i class="fas fa-info-circle me-2 text-primary"></i>À propos de SkinAI</h5>
+            <p class="text-muted">SkinAI utilise un modèle de deep learning <b>VGG16</b> entraîné pour détecter les lésions cutanées malignes ou bénignes à partir d'images dermoscopiques.</p>
+            <a href="/predict" class="btn btn-primary mt-2">
+                <i class="fas fa-microscope me-1"></i> Lancer une analyse
+            </a>
+        </div>
+    </div>
+    <div class="col-md-6">
+        <div class="card p-4">
+            <h5 class="fw-bold mb-3"><i class="fas fa-chart-pie me-2 text-primary"></i>Répartition</h5>
+            {% if total > 0 %}
+                <div class="mb-3">
+                    <div class="d-flex justify-content-between mb-1">
+                        <span class="fw-semibold text-danger">Malignant</span>
+                        <span>{{ ((malignant / total) * 100)|round(1) }}%</span>
+                    </div>
+                    <div class="progress mb-3" style="height:10px; border-radius:10px;">
+                        <div class="progress-bar bg-danger" style="width: {{ (malignant / total) * 100 }}%; border-radius:10px;"></div>
+                    </div>
+                </div>
+                <div>
+                    <div class="d-flex justify-content-between mb-1">
+                        <span class="fw-semibold text-success">Benign</span>
+                        <span>{{ ((benign / total) * 100)|round(1) }}%</span>
+                    </div>
+                    <div class="progress" style="height:10px; border-radius:10px;">
+                        <div class="progress-bar bg-success" style="width: {{ (benign / total) * 100 }}%; border-radius:10px;"></div>
+                    </div>
+                </div>
+            {% else %}
+                <p class="text-muted">Aucun patient analysé pour le moment.</p>
+            {% endif %}
+        </div>
+    </div>
+</div>
+
+{% endblock %}

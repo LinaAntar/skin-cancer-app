@@ -1,0 +1,37 @@
+{% extends "base.html" %}
+{% block content %}
+
+<h2 class="mb-4"><i class="fas fa-microscope me-2"></i> Analyse patient</h2>
+
+<div class="row justify-content-center">
+    <div class="col-md-7">
+        <div class="card p-4">
+            <form method="POST" enctype="multipart/form-data">
+                <div class="mb-3">
+                    <label class="form-label">
+                        <i class="fas fa-user me-1"></i> Nom du patient
+                    </label>
+                    <input type="text" name="name" class="form-control" placeholder="Nom complet" required>
+                </div>
+                <div class="mb-3">
+                    <label class="form-label">
+                        <i class="fas fa-birthday-cake me-1"></i> Âge
+                    </label>
+                    <input type="number" name="age" class="form-control" placeholder="Âge du patient" min="0" max="120" required>
+                </div>
+                <div class="mb-4">
+                    <label class="form-label">
+                        <i class="fas fa-image me-1"></i> Image de la lésion
+                    </label>
+                    <input type="file" name="image" class="form-control" accept=".png,.jpg,.jpeg" required>
+                    <small class="text-muted">Formats acceptés : PNG, JPG, JPEG</small>
+                </div>
+                <button type="submit" class="btn btn-primary w-100 py-2">
+                    <i class="fas fa-search me-2"></i> Analyser
+                </button>
+            </form>
+        </div>
+    </div>
+</div>
+
+{% endblock %}
