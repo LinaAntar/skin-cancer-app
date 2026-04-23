@@ -1,0 +1,24 @@
+<h2>Liste des patients</h2>
+
+<table border="1">
+<tr>
+<th>Nom</th>
+<th>Age</th>
+<th>Résultat</th>
+<th>Probabilité</th>
+<th>Image</th>
+</tr>
+
+{% for p in patients %}
+<tr>
+<td>{{ p.name }}</td>
+<td>{{ p.age }}</td>
+<td>{{ p.result }}</td>
+<td>{{ (p.probability * 100) | round(2) }}%</td>
+<td><img src="{{ p.image_path }}" width="100"></td>
+</tr>
+{% endfor %}
+
+</table>
+
+<a href="/dashboard">Retour</a>

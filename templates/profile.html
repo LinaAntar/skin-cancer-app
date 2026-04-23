@@ -1,0 +1,65 @@
+{% extends "base.html" %}
+{% block content %}
+
+<h2 class="mb-4"><i class="fas fa-user-md me-2"></i> Mon Profil</h2>
+
+<div class="row g-4">
+    <!-- Carte profil -->
+    <div class="col-md-4">
+        <div class="card p-4 text-center">
+            {% if user.photo %}
+                <img src="/{{ user.photo.replace('\\', '/') }}"
+                     class="rounded-circle mb-3 border border-3"
+                     style="width:120px; height:120px; object-fit:cover; border-color:#7c3aed !important;">
+            {% else %}
+                <div class="rounded-circle bg-gradient d-flex align-items-center justify-content-center mx-auto mb-3"
+                     style="width:120px; height:120px; background: linear-gradient(135deg, #7c3aed, #db2777);">
+                    <i class="fas fa-user-md fa-3x text-white"></i>
+                </div>
+            {% endif %}
+            <h4 class="fw-bold">{{ user.full_name or user.username }}</h4>
+            <p class="text-muted">{{ user.specialty or 'Médecin' }}</p>
+            <span class="badge bg-primary rounded-pill px-3 py-2">
+                <i class="fas fa-stethoscope me-1"></i> {{ user.specialty or 'Dermatologue' }}
+            </span>
+            <hr>
+            <p class="text-muted mb-1"><i class="fas fa-user me-2"></i> @{{ user.username }}</p>
+            <p class="text-muted"><i class="fas fa-phone me-2"></i> {{ user.phone or 'Non renseigné' }}</p>
+        </div>
+    </div>
+
+    <!-- Formulaire modification -->
+    <div class="col-md-8">
+        <div class="card p-4">
+            <h5 class="fw-bold mb-4"><i class="fas fa-edit me-2"></i> Modifier mon profil</h5>
+            <form method="POST" enctype="multipart/form-data">
+                <div class="row g-3">
+                    <div class="col-md-6">
+                        <label class="form-label">Nom complet</label>
+                        <input type="text" name="full_name" class="form-control"
+                               value="{{ user.full_name or '' }}" placeholder="Dr. Prénom Nom">
+                    </div>
+                    <div class="col-md-6">
+                        <label class="form-label">Spécialité</label>
+                        <input type="text" name="specialty" class="form-control"
+                               value="{{ user.specialty or '' }}" placeholder="Dermatologue">
+                    </div>
+                    <div class="col-md-6">
+                        <label class="form-label">Téléphone</label>
+                        <input type="text" name="phone" class="form-control"
+                               value="{{ user.phone or '' }}" placeholder="+216 XX XXX XXX">
+                    </div>
+                    <div class="col-md-6">
+                        <label class="form-label">Photo de profil</label>
+                        <input type="file" name="photo" class="form-control" accept=".png,.jpg,.jpeg">
+                    </div>
+                </div>
+                <button type="submit" class="btn btn-primary mt-4">
+                    <i class="fas fa-save me-2"></i> Sauvegarder
+                </button>
+            </form>
+        </div>
+    </div>
+</div>
+
+{% endblock %}
