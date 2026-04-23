@@ -97,8 +97,9 @@ model/
 └── vgg16_malignant_vs_benign.h5   ← Trained Keras model
 ```
 
-> The `.h5` model file is not included in this repository due to size. Place it manually in the `model/` directory.
-
+> The `.h5` model file is not included in this repository due to size.
+> **Download the model here:** [Google Drive – vgg16_malignant_vs_benign.h5](YOUR_GOOGLE_DRIVE_LINK)
+> After downloading, place it in the `model/` directory.
 ---
 
 ## Tech Stack
