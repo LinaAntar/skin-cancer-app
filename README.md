@@ -98,7 +98,7 @@ model/
 ```
 
 > The `.h5` model file is not included in this repository due to size.
-> **Download the model here:** [Google Drive – vgg16_malignant_vs_benign.h5](YOUR_GOOGLE_DRIVE_LINK)
+> **Download the model here:** [Google Drive – vgg16_malignant_vs_benign.h5]((https://drive.google.com/file/d/15Kp3xsXA7gxOrFAKzrVl4xIXp8e1GB6o/view?usp=drive_link))
 > After downloading, place it in the `model/` directory.
 ---
 
