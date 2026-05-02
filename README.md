@@ -20,6 +20,7 @@
 - [Installation](#-installation)
 - [Database Setup](#-database-setup)
 - [Usage](#-usage)
+- [Demo](#-demo)
 - [Screenshots](#-screenshots)
 - [Author](#-author)
 
@@ -100,7 +101,9 @@ model/
 > The `.h5` model file is not included in this repository due to size.
 > **Download the model here:** [Google Drive – vgg16_malignant_vs_benign.h5](https://drive.google.com/file/d/15Kp3xsXA7gxOrFAKzrVl4xIXp8e1GB6o/view?usp=drive_link)
 > After downloading, place it in the `model/` directory.
+
 ---
+
 ## Tech Stack
 
 ### Backend
@@ -153,6 +156,11 @@ SKIN_CANCER_APP/
 │   ├── patients.html               ← Patient list with filtering
 │   └── profile.html                ← Doctor profile page
 │
+├── assets/
+│   ├── demo1.gif                   ← Demo part 1
+│   ├── demo2.gif                   ← Demo part 2
+│   └── screenshots/                ← App screenshots
+│
 ├── venv/                           ← Python virtual environment
 └── requirements.txt                ← Python dependencies
 ```
@@ -170,7 +178,7 @@ SKIN_CANCER_APP/
 ### Step 1 — Clone the repository
 
 ```bash
-git clone https://github.com/YOUR_USERNAME/skin-cancer-app.git
+git clone https://github.com/LinaAntar/skin-cancer-app.git
 cd skin-cancer-app
 ```
 
@@ -270,16 +278,33 @@ Login → Dashboard → New Analysis → Upload Image → View Result → Patien
 
 ---
 
+## Demo
+
+![Demo Part 1 — Login & Dashboard](assets/demo1.gif)
+
+![Demo Part 2 — Analysis & Patient Management](assets/demo2.gif)
+
+---
+
 ## Screenshots
 
-| Page | Description |
-|---|---|
-| Login | Secure authentication with medical branding |
-| Dashboard | Real-time stats: Total / Malignant / Benign |
-| Analysis | Upload patient image for AI diagnosis |
-| Result | Diagnosis result with confidence score |
-| Patients | Full patient history with filtering & deletion |
-| Profile | Doctor profile with photo upload |
+### Login
+![Login](assets/screenshots/login.png)
+
+### Dashboard
+![Dashboard](assets/screenshots/dashboard.png)
+
+### Patient Analysis
+![Analysis](assets/screenshots/analyse.png)
+
+### Patient List
+![Patients](assets/screenshots/patients.png)
+
+### Filter — Malignant only
+![Filter Malignant](assets/screenshots/filter_malignant.png)
+
+### Doctor Profile
+![Profile](assets/screenshots/profile.png)
 
 ---
 
