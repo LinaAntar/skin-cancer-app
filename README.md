@@ -12,17 +12,17 @@
 
 ## Table of Contents
 
-- [Overview](#-overview)
-- [Features](#-features)
-- [AI Model](#-ai-model)
-- [Tech Stack](#-tech-stack)
-- [Project Structure](#-project-structure)
-- [Installation](#-installation)
-- [Database Setup](#-database-setup)
-- [Usage](#-usage)
-- [Demo](#-demo)
-- [Screenshots](#-screenshots)
-- [Author](#-author)
+- [Overview](#overview)
+- [Features](#features)
+- [AI Model](#ai-model)
+- [Tech Stack](#tech-stack)
+- [Project Structure](#project-structure)
+- [Installation](#installation)
+- [Database Setup](#database-setup)
+- [Usage](#usage)
+- [Demo](#demo)
+- [Screenshots](#screenshots)
+- [Author](#author)
 
 ---
 
