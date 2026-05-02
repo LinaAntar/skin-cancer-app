@@ -320,7 +320,8 @@ Login → Dashboard → New Analysis → Upload Image → View Result → Patien
 
 ## Author
 
-**Lina**
+**Lina Antar**
+
 Student — Ingénierie en Technologies Avancées
 ENSTA Borj-Cédria
 
